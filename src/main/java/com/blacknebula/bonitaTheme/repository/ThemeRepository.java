@@ -10,12 +10,12 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public interface ThemeRepository extends JpaRepository<Theme, Long> {
     @Modifying
-    @Query("update Theme t set t.content = ?2 where t.id = ?1")
+    @Query("update Theme t set t.content = ?2, t.lastUpdateDate = ?3 where t.id = ?1")
     @Transactional
-    void updateContent(Long id, byte[] content);
+    void updateContent(Long id, byte[] content, long lastUpdate);
 
     @Modifying
-    @Query("update Theme t set t.cssContent = ?2 where t.id = ?1")
+    @Query("update Theme t set t.cssContent = ?2, t.lastUpdateDate = ?3 where t.id = ?1")
     @Transactional
-    void updateCssContent(Long id, byte[] cssContent);
+    void updateCssContent(Long id, byte[] cssContent, long lastUpdate);
 }

@@ -10,6 +10,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.util.Date;
 
 @Service
 public class ThemeService {
@@ -26,7 +27,7 @@ public class ThemeService {
         }
 
         try {
-            themeRepository.updateContent(id, file.getBytes());
+            themeRepository.updateContent(id, file.getBytes(), new Date().getTime());
         } catch (IOException ex) {
             throw new FileStorageException("Could not update theme content [" + fileName + "]. Please try again!", ex);
         }
@@ -41,7 +42,7 @@ public class ThemeService {
         }
 
         try {
-            themeRepository.updateCssContent(id, file.getBytes());
+            themeRepository.updateCssContent(id, file.getBytes(), new Date().getTime());
         } catch (IOException ex) {
             throw new FileStorageException("Could not update theme css content [" + fileName + "]. Please try again!", ex);
         }
