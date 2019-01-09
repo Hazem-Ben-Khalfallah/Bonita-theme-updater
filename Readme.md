@@ -31,15 +31,19 @@ java -jar target/bonita-theme-0.0.1-SNAPSHOT.jar
 That's it! The application can be accessed at `http://localhost:18080`.
 
 **4. Download bonita portal default theme & cssContent**
+
 Download bonita portal theme zip file and cssContent file locally
 
 **5. Customize style**
+
 Extract the download zip file and customize all that you need. Don't forget to zip the extracted folder when you finish.
 
 **6. upload your customized files**
+
 use the same url to upload the two files `http://localhost:18080`
 
 **7. Go to your Bonita portal and refresh to see the changes**
+
 You may need to remove browser cache to see the changes. no need to restart the app or any thing like that.
 
 Enjoy!
